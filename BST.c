@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// تعريف النود
 typedef struct Node {
     int data;
     struct Node* left;
     struct Node* right;
 } Node;
 
-// إنشاء نود جديدة
 Node* createNode(int value) {
     Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->data = value;
@@ -17,7 +15,6 @@ Node* createNode(int value) {
     return newNode;
 }
 
-// إدخال عنصر في BST
 Node* insert(Node* root, int value) {
     if (root == NULL) {
         return createNode(value);
@@ -32,7 +29,6 @@ Node* insert(Node* root, int value) {
     return root;
 }
 
-// البحث عن عنصر
 Node* search(Node* root, int key) {
     if (root == NULL || root->data == key) {
         return root;
@@ -45,7 +41,6 @@ Node* search(Node* root, int key) {
     }
 }
 
-// إيجاد أقل قيمة (minimum)
 Node* findMin(Node* root) {
     while (root && root->left != NULL) {
         root = root->left;
@@ -53,7 +48,6 @@ Node* findMin(Node* root) {
     return root;
 }
 
-// حذف عنصر
 Node* deleteNode(Node* root, int value) {
     if (root == NULL) return root;
 
