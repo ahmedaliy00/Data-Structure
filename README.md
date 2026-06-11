@@ -1,25 +1,28 @@
-# Data Structures Implementation (C Language) 🚀
+# Data Structures Implementation in C
 
-هذا المستودع يحتوي على تطبيقات عملية لهياكل البيانات التي تمت دراستها خلال المعامل الجامعية.
+This repository contains professional-grade implementations of core Data Structures studied and applied during university laboratory sessions. The implementations focus on efficiency, clean code practices, and proper memory management in the C language.
 
-## 📂 محتويات المشروع (Project Contents)
+## 📂 Project Contents
 
-* **BST.c**: تطبيق لشجرة البحث الثنائية (Binary Search Tree) تشمل عمليات الإدخال والحذف.
-* **Evaluation.c**: كود لحساب قيمة التعبيرات الرياضية.
-* **postfix.c**: تحويل التعبيرات الرياضية إلى صيغة Postfix باستخدام الـ Stacks.
-* **Recursive.c**: أمثلة على الخوارزميات التكرارية.
+The repository includes the following modular implementations:
 
-## 🛠️ الأدوات المستخدمة (Tech Stack)
+* **`BST.c` (Binary Search Tree):** A complete implementation of a Binary Search Tree (BST) featuring recursive insertion, structured in-order traversal, node searching algorithms, and optimal deletion logic.
+* **`postfix.c` & `InfixTopostfix.c` (Stack Applications):** Implementation of Stacks to handle mathematical expressions, including parsing algorithms to convert Infix notation into Postfix expression format.
+* **`Evaluation.c`:** Program to evaluate postfix expressions using stack-based arithmetic operations.
+* **`Recursive.c`:** A collection of highly optimized recursive algorithms demonstrating call-stack behaviors and performance tracing.
 
-* **Language**: C
-* **Environment**: VS Code & GCC Compiler
-* **Version Control**: Git & GitHub
+## 🛠️ Tech Stack
 
-## 🚀 كيف تشغل الأكواد؟
+* **Language:** C (C11 Standard)
+* **Environment:** Visual Studio Code (VS Code)
+* **Compiler:** GCC (GNU Compiler Collection)
+* **Version Control:** Git & GitHub
 
-1. قم بعمل Clone للمستودع.
-2. استخدم أي Compiler للغة C (مثل GCC).
-3. قم بتشغيل الملف المراد:
-   ```bash
-   gcc BST.c -o bst
-   ./bst
+##  How to Run the Code Locally
+
+To run any of the data structure modules on your local machine, follow these standard steps:
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/ahmedaliy00/Data-Structure.git](https://github.com/ahmedaliy00/Data-Structure.git)
+cd Data-Structure
