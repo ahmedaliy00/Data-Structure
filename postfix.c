@@ -37,7 +37,7 @@ int main() {
     int j = 0, i = 0;
     char stack[size];
     char output[size] = "";
-    char code[] = "(12/3)*(5+25-14)+9";
+    char code[] = "14/5+77*(24+9*18)/2";
 
     for (i = 0; i < strlen(code); i++) {
         if (code[i] == ' ') continue;

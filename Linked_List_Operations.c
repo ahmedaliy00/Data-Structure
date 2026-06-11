@@ -155,6 +155,34 @@ void DisplayReverse(node *current)
         DisplayReverse(current->next);
         printf("-> %d", current->num);  
 }
+node *reverse(node *head)
+{
+    node *prev = NULL;
+    node *current = head;
+    node *next = NULL;
+
+    while (current != NULL) {
+        next = current->next;  // Store next
+        current->next = prev;  // Reverse current node's pointer
+        prev = current;        // Move pointers one position ahead.
+        current = next;
+    }
+    return prev;  // New head of the reversed list
+}
+node *reverseRecursive(node *head) {
+    // Base case
+    if (head == NULL || head->next == NULL)
+        return head;
+
+    // Recursively reverse the rest of the list
+    node *newHead = reverseRecursive(head->next);
+
+    // Reverse the current node's pointer
+    head->next->next = head;
+    head->next = NULL;
+
+    return newHead;  // New head of the reversed list
+}
 int main ()
 { 
     int nodes;

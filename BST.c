@@ -30,15 +30,14 @@ Node* insert(Node* root, int value) {
 }
 
 Node* search(Node* root, int key) {
-    if (root == NULL || root->data == key) {
+    if (root == NULL || root->data == key)
         return root;
-    }
 
-    if (key < root->data) {
+    if (key < root->data)
         return search(root->left, key);
-    } else {
+    else 
         return search(root->right, key);
-    }
+    
 }
 
 Node* findMin(Node* root) {
@@ -93,9 +92,9 @@ int main() {
 
     root = insert(root, 50);
     insert(root, 30);
-    insert(root, 70);
+    insert(root, 30);
     insert(root, 20);
-    insert(root, 40);
+    insert(root, 30);
     insert(root, 60);
     insert(root, 80);
 
