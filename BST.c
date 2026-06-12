@@ -55,12 +55,12 @@ Node* deleteNode(Node* root, int value) {
     } else if (value > root->data) {
         root->right = deleteNode(root->right, value);
     } else {
-        // حالة 1: مفيش أولاد
+        // case 1: no children
         if (root->left == NULL && root->right == NULL) {
             free(root);
             return NULL;
         }
-        // حالة 2: ابن واحد
+        // case 2:have one child
         else if (root->left == NULL) {
             Node* temp = root->right;
             free(root);
@@ -70,14 +70,35 @@ Node* deleteNode(Node* root, int value) {
             free(root);
             return temp;
         }
-        // حالة 3: عنده طفلين
-        Node* temp = findMin(root->right);
-        root->data = temp->data;
-        root->right = deleteNode(root->right, temp->data);
-    }
+        // case 3: have two children
 
-    return root;
-}
+        // by copying 
+
+        // Node* temp = findMin(root->right);
+        // root->data = temp->data;
+        // root->right = deleteNode(root->right, temp->data);
+        // return root;
+
+        // by merging
+        Node * tempR = root->right;
+        Node *tempL = root->left;
+        Node *po = tempR;
+        if(po->left == NULL){
+            po->left = tempL;
+            free(root);
+            return po;
+        }
+        while(po->left->left != NULL)
+            po = po->left;
+        Node *newroot = po->left;
+        po->left = newroot->right;
+        newroot->left = tempL;
+        newroot->right = tempR;
+        free(root);
+        return newroot;    
+        }
+        
+    }
 
 void inorder(Node* root) {
     if (root != NULL) {
@@ -86,6 +107,21 @@ void inorder(Node* root) {
         inorder(root->right);
     }
 }
+void preorder(Node* root) {
+    if (root != NULL) {
+        printf("%d ", root->data);
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
+void postorder(Node* root) {
+    if (root != NULL) {
+        postorder(root->left);
+        postorder(root->right);
+        printf("%d ", root->data);
+    }
+}
+
 
 int main() {
     Node* root = NULL;
@@ -99,8 +135,8 @@ int main() {
     insert(root, 80);
     insert(root, 40);
 
-    printf("Inorder Traversal: ");
-    inorder(root);
+    printf("Preorder Traversal: ");
+    preorder(root);
     printf("\n");
 
     // Search
@@ -119,3 +155,4 @@ int main() {
 
     return 0;
 }
+ 
